@@ -18,6 +18,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Template directory path
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 
+# Static directory path
+STATIC_DIR = os.path.join(BASE_DIR, 'static')
+
+STATICFILES_DIRS = [STATIC_DIR]
+
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-as&he(5nq%ml9jf#=g+(d0#e8)3q#-ih+5dv+10p@-9j!-h^mx'
 
