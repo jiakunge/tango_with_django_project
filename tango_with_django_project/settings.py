@@ -15,13 +15,15 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Template directory path
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 
-# Static directory path
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
 
-STATICFILES_DIRS = [STATIC_DIR]
+MEDIA_DIR = os.path.join(BASE_DIR, 'media')
+
+# Set up media file hosting.
+MEDIA_ROOT = MEDIA_DIR
+MEDIA_URL = '/media/'
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-as&he(5nq%ml9jf#=g+(d0#e8)3q#-ih+5dv+10p@-9j!-h^mx'
@@ -67,6 +69,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -115,7 +118,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
-
+STATICFILES_DIRS = [STATIC_DIR]
 STATIC_URL = 'static/'
 
 # Default primary key field type
